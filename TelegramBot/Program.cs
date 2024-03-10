@@ -20,6 +20,12 @@ var telegram = new PRBot(options =>
 	options.BotId = 0;
 });
 
+//Подписка на простые логи
+telegram.OnLogCommon += Telegram_OnLogCommon;
+//Подписка на логи с ошибками
+telegram.OnLogError += Telegram_OnLogError;
+
+// запус работы бота
 await telegram.Start();
 
 #endregion [запуск telegram бота]

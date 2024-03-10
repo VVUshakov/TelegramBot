@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="NLog" Version="5.2.8" />
     <PackageReference Include="PRTelegramBot" Version="0.5.5.1" />
   </ItemGroup>
 

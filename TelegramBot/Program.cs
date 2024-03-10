@@ -1,6 +1,11 @@
-﻿using NLog;
+﻿using ConsoleService.Models.Enums;
+using NLog;
 using PRTelegramBot.Core;
 using PRTelegramBot.Extensions;
+
+
+//Словарик для логгеров
+Dictionary<string, Logger> LoggersContainer = new Dictionary<string, Logger>();
 
 
 #region [запуск telegram бота]
@@ -30,11 +35,7 @@ await telegram.Start();
 #endregion [запуск telegram бота]
 
 
-
 #region [Логгирование]
-
-//Словарик для логгеров
-Dictionary<string, Logger> LoggersContainer = new Dictionary<string, Logger>();
 
 void Telegram_OnLogError(Exception ex, long? id = null)
 {
@@ -96,8 +97,6 @@ void Telegram_OnLogCommon(string msg, Enum? eventType, ConsoleColor color = Cons
 			LoggersContainer.Add(eventType.GetDescription(), nextLogger);
 		}
 	}
-
-
 }
 
 #endregion [Логгирование]

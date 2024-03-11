@@ -1,14 +1,14 @@
-﻿using ConsoleService.Models.Enums;
-using NLog;
-using PRTelegramBot.Core;
-using PRTelegramBot.Extensions;
+﻿using PRTelegramBot.Core;
 
-
+/*
 //Словарик для логгеров
-Dictionary<string, Logger> LoggersContainer = new Dictionary<string, Logger>();
+Dictionary<string, Logger> LoggersContainer = [];
+*/
 
+#region [Запуск telegram бота]
 
-#region [запуск telegram бота]
+//Уведомление о запуске программы
+Console.WriteLine("Запуск программы");
 
 var telegram = new PRBot(options =>
 {
@@ -32,7 +32,7 @@ telegram.OnLogError += Telegram_OnLogError;
 // Запуск работы бота
 await telegram.Start();
 
-#endregion [запуск telegram бота]
+#endregion [Запуск telegram бота]
 
 
 #region [Логгирование]
@@ -40,11 +40,11 @@ await telegram.Start();
 void Telegram_OnLogError(Exception ex, long? id = null)
 {
 	Console.ForegroundColor = ConsoleColor.Red;
-	string errorMsg = $"{DateTime.Now}: {ex.ToString()}";
-
-	if(ex is Telegram.Bot.Exceptions.ApiRequestException apiEx)
+	string errorMsg = $"{DateTime.Now}: {ex}";
+	/*
+	if(ex is ApiRequestException apiEx)
 	{
-		errorMsg = $"{DateTime.Now}: {apiEx.ToString()}";
+		errorMsg = $"{DateTime.Now}: {apiEx}";
 		if(apiEx.Message.Contains("Запрещено: бот заблокирован пользователем"))
 		{
 			string msg = $"Пользователь {id.GetValueOrDefault()} заблокировал бота - " + apiEx.ToString();
@@ -73,6 +73,7 @@ void Telegram_OnLogError(Exception ex, long? id = null)
 		nextLogger.Error(errorMsg);
 		LoggersContainer.Add("Error", nextLogger);
 	}
+	*/
 	Console.WriteLine(errorMsg);
 	Console.ResetColor();
 }
@@ -83,7 +84,7 @@ void Telegram_OnLogCommon(string msg, Enum? eventType, ConsoleColor color = Cons
 	string formatMsg = $"{DateTime.Now}: {msg}";
 	Console.WriteLine(formatMsg);
 	Console.ResetColor();
-
+	/*
 	if(eventType != null)
 	{
 		if(LoggersContainer.TryGetValue(eventType.GetDescription(), out var logger))
@@ -97,17 +98,18 @@ void Telegram_OnLogCommon(string msg, Enum? eventType, ConsoleColor color = Cons
 			LoggersContainer.Add(eventType.GetDescription(), nextLogger);
 		}
 	}
+	*/
 }
 
 #endregion [Логгирование]
+
 
 #region [Держать консоль открытой]
 
 //Команда для завершения приложения
 const string EXIT_COMMAND = "exit";
 
-//Запуск программы
-Console.WriteLine("Запуск программы");
+// Уведомление о команде закрытия программы 
 Console.WriteLine($"Для закрытия программы напишите {EXIT_COMMAND}");
 
 //Ожидание ввода команды

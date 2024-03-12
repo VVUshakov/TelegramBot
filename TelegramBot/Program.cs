@@ -1,9 +1,5 @@
 ﻿using PRTelegramBot.Core;
 
-/*
-//Словарик для логгеров
-Dictionary<string, Logger> LoggersContainer = [];
-*/
 
 #region [Запуск telegram бота]
 

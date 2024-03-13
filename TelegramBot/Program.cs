@@ -1,9 +1,15 @@
-﻿using PRTelegramBot.Core;
+﻿using ConsoleApp.Configs;
+using NLog;
+using PRTelegramBot.Core;
 
-/*
+
+
+//Конфигурация NLog
+NLogConfigurate.Configurate();
 //Словарик для логгеров
-Dictionary<string, Logger> LoggersContainer = [];
-*/
+Dictionary<string, Logger> LoggersContainer = new Dictionary<string, Logger>();
+//Команда для завершения приложения
+
 
 #region [Запуск telegram бота]
 

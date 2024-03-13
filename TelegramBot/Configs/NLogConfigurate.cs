@@ -1,7 +1,7 @@
 ﻿using PRTelegramBot.Extensions;
 using System.Reflection;
 
-namespace PRTelegramBot.Configs
+namespace TelegramBot.Configs
 {
 	/// <summary>
 	/// Конфигурация системы логирования

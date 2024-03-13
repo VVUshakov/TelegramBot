@@ -1,5 +1,5 @@
 ﻿using NLog;
-using PRTelegramBot.Core;
+using TelegramBot.Configs;
 
 
 

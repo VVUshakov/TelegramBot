@@ -1,5 +1,5 @@
-﻿using NLog;
-using TelegramBot.Configs;
+﻿using ConsoleApp.Configs;
+using NLog;
 
 
 

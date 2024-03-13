@@ -1,7 +1,8 @@
-﻿using PRTelegramBot.Extensions;
+﻿using ConsoleBot.Models.Enums;
+using PRTelegramBot.Extensions;
 using System.Reflection;
 
-namespace TelegramBot.Configs
+namespace ConsoleApp.Configs
 {
 	/// <summary>
 	/// Конфигурация системы логирования

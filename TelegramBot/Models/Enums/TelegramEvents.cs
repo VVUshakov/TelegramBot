@@ -2,6 +2,9 @@
 
 namespace ConsoleApp.Models.Enums
 {
+	/// <summary>
+	/// Типы событий
+	/// </summary>
 	public enum TelegramEvents
 	{
 		[Description(nameof(Initialization))]

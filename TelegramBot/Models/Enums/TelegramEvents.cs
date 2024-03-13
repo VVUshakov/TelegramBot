@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace ConsoleBot.Models.Enums
+namespace ConsoleApp.Models.Enums
 {
 	public enum TelegramEvents
 	{

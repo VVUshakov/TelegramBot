@@ -1,5 +1,6 @@
 ﻿using ConsoleApp.Configs;
 using NLog;
+using PRTelegramBot.Core;
 
 
 

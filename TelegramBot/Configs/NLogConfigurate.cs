@@ -1,4 +1,4 @@
-﻿using ConsoleBot.Models.Enums;
+﻿using ConsoleApp.Models.Enums;
 using PRTelegramBot.Extensions;
 using System.Reflection;
 
